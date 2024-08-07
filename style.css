@@ -2,6 +2,7 @@
 
 :root {
   --Lime: hsl(61, 70%, 52%);
+  --lime2:#d7da2fa6;
   --Red: hsl(4, 69%, 50%);
   --White: hsl(0, 0%, 100%);
   --Slate-100: hsl(202, 86%, 94%);
@@ -32,7 +33,7 @@ body {
   }
 main{
     width: 70%;
-    height: 500px;
+    height: 580px;
     margin:  0 auto;
     background-color: white;
     border-radius: 15px;
@@ -78,7 +79,7 @@ main{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 .right-content, .right-result-container{
     padding: 0 5%;
@@ -94,7 +95,7 @@ main{
 /* right-result */
 .right-result-container{
     padding-bottom: 10%;
-
+display: none;
 }
 .right-result-container h1{
     color: var(--Lime);
@@ -109,10 +110,10 @@ main{
     border-bottom: 1px solid var(--Slate-100);
 }
 /* form */
-form{
+/* form{ */
     /* background-color: aquamarine; */
 
-}
+/* } */
 .form-group{
     padding: 0.5rem  ;
     
@@ -127,6 +128,20 @@ form{
     
 }
 
+input[type="text"]:hover{
+    cursor: pointer !important;
+}
+
+.form-inner:hover{
+    border:2px solid var(--Slate-800)
+}
+
+.form-radio:hover{
+    border:2px solid var(--Lime);
+    cursor: pointer !important;
+}
+
+
 .form-inner input{
     width: 90%;
     padding: 10px 8px;
@@ -136,10 +151,17 @@ box-shadow: none;
 border: none;
 outline: none;
 }
-    
+      
+#clearall:hover{
+    cursor:pointer;
+}
+
 .form-inner span{
     width: 10%;
     background-color: var(--Slate-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .form-group2{
     width: 100%;
@@ -215,13 +237,37 @@ button{
     align-items: center;
     background-color: var(--Lime);
     border: none;
+    margin: 1rem, 0;
+    }
+
+    button:hover{
+        background-color: var(--lime2);
+        cursor: pointer;
     }
 
 
+    /* special css class */
+    .form-inner.error{
+        border: 1px solid var(--Red) !important;
+    }
 
+.form-inner.error span{
+    background-color: var(--Red);
+    color: white;
+}
 
-/* Medium */
+.form-inner small{
 
+    visibility: hidden;
+}
+
+.form-inner.error small{
+color:var(--Red);
+visibility:visible;
+}
+small{
+    color: var(--Red);
+}
 
 /* Mobile */
 @media (max-width: 900px) {
